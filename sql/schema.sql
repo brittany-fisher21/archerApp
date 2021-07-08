@@ -10,18 +10,23 @@ CREATE TABLE locations (
     id serial PRIMARY KEY,
     state_name text,
     location_name text,
+    location_description text,
     location_image image,
-    location_description VARCHAR (100),
     location_activities text
 );
 
 CREATE TABLE activities (
+    id serial PRIMARY KEY,
     activity_name text,
     activity_level text,
-    activity_terrain text,
+    activity_terrain text
 );
 
 
 CREATE TABLE reviews (
-
+    id serial PRIMARY KEY,
+    score integer,
+    content text,
+    locations_id integer REFERENCES locations(id),
+    user_id integer REFERENCES users (id)
 );
