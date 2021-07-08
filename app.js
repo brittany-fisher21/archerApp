@@ -16,7 +16,7 @@ const logger = morgan('tiny');//middlewear for logging
 app.use(logger);
 
 app.use(express.json()); // adding form information
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));// middlewear for using static assets, front end stuff like css and images
 
 const es6Renderer = require('express-es6-template-engine');
