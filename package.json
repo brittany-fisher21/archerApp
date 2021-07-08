@@ -1,5 +1,5 @@
 {
-  "name": "archerApp",
+  "name": "archerapp",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -14,11 +14,13 @@
     "pg-promise": "^10.10.2",
     "slugify": "^1.5.3"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "nodemonConfig": {
+    "delay": 2500
   },
   "repository": {
     "type": "git",

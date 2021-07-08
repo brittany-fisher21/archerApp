@@ -11,6 +11,7 @@ CREATE TABLE locations (
     state_name text,
     location_name text,
     location_description text,
+    location_image image,
     location_activities text
 );
 
