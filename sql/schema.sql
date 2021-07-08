@@ -10,8 +10,8 @@ CREATE TABLE locations (
     id serial PRIMARY KEY,
     state_name text,
     location_name text,
-    location_img text,
-    location_description text,
+    location_image image,
+    location_description VARCHAR (100),
     location_activities text
 );
 
