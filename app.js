@@ -31,5 +31,8 @@ server.listen(port, hostname, () => {
 });
 
 const rootController = require('./routes/index');
+const registerController = require('./routes/register');
 
+
+app.use('/register', registerController);
 app.use('/', rootController);

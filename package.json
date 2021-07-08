@@ -11,7 +11,8 @@
     "fetch-node": "0.0.1",
     "helmet": "^4.6.0",
     "morgan": "^1.10.0",
-    "pg-promise": "^10.10.2"
+    "pg-promise": "^10.10.2",
+    "slugify": "^1.5.3"
   },
   "devDependencies": {},
   "scripts": {
