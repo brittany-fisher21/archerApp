@@ -2,8 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-const slugify = require('slugify');
-router.get('/:slug?', async (req, res) =>{
+
+router.get('/', async (req, res) =>{
     
         res.render('template', {
             locals: {
