@@ -27,12 +27,14 @@ app.set('view engine', 'html');
 const server = http.createServer(app);
 
 server.listen(port, hostname, () => {
-    console.log(`server is running at http://${hostname}:${port}`);
+    console.log(`Server is running at http://${hostname}:${port}`);
 });
 
 const rootController = require('./routes/index');
 const registerController = require('./routes/register');
+const locationsController = require('./routes/locations');
 
 
 app.use('/register', registerController);
+app.use('/locations', locationsController)
 app.use('/', rootController);
