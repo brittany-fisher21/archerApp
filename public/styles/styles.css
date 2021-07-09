@@ -1,3 +1,9 @@
-#home_top_sec {
-    background: url(/images/archer_background.jpeg)
+#home_top_sec_img {
+    background: url(/images/archer_background.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.home_header_text {
+    color: white;
 }
