@@ -1,9 +1,9 @@
 INSERT INTO users
-    (name, email, user_name)
+    (name, email, user_name, password)
 VALUES
-    ('Alyna', 'alyna@fakeemail.com', 'Alyna_fake');
-    ('Brittany', 'brittany@fakeemail.com', 'Brittany_fake');
-    ('Joshua', 'joshua@fakeemail.com', 'Joshua_fake');
+    ('Alyna', 'alyna@fakeemail.com', 'Alyna_fake', 'abc'),
+    ('Brittany', 'brittany@fakeemail.com', 'Brittany_fake', 'xyz'),
+    ('Joshua', 'joshua@fakeemail.com', 'Joshua_fake', '123')
 
 INSERT INTO locations
     (state_name, location_name, location_description, location_image location_activities)
@@ -22,11 +22,11 @@ VALUES
 -- BOOKINGS --
 
 INSERT INTO reviews
-    (score, content, locations_id, user_id)
+    (score, content, locations_id)
 VALUES
-    (5, 'Soooo much fun', 1, 1 ),
-    (5, 'Amazing experience! Beautiful and Peaceful', 2, 2),
-    (5, 'This place is a gem! Grateful to have found this trail', 3, 3);
+    (5, 'Soooo much fun', 1),
+    (5, 'Amazing experience! Beautiful and Peaceful', 2),
+    (5, 'This place is a gem! Grateful to have found this trail', 3);
 
 -- NEED TO ADD ITINERARY BUT YA GIRL IS SLEEPY --
 INSERT INTO itinerary
