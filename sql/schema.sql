@@ -45,5 +45,5 @@ CREATE TABLE itinerary (
     locations_id integer REFERENCES locations(id),
     activities_id integer REFERENCES activities(id),
     bookings_id integer REFERENCES bookings(id),
-    reviews_id integer REFERENCES reviews(id),
+    reviews_id integer REFERENCES reviews(id)
 );
