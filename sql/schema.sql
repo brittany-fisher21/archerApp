@@ -36,7 +36,6 @@ CREATE TABLE reviews (
     score integer,
     content text,
     locations_id integer REFERENCES locations(id),
-    users_id integer REFERENCES users(id)
 );
 
 CREATE TABLE itinerary (
