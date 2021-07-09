@@ -3,7 +3,7 @@ const express = require('express'),
     bcrypt = require('bcryptjs'),
     UsersModel = require('../models/users');
 
-/* GET users listing. */
+
 router.get('/signup', (req, res) => {
     res.render('template', {
         locals: {
@@ -33,7 +33,7 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 })
 
-/* POST user routes. */
+
 router.post('/register', async (req, res) => {
     const { name, email, user_name, password } = req.body;
 
@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
     const response = await user.login();
 
     if (!!response.isValid) {
-        // do stuff if a user is logged in
+        
         req.session.is_logged_in = response.isValid;
         req.session.user_id = response.user_id;
         req.session.first_name = response.first_name;

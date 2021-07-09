@@ -22,10 +22,10 @@ VALUES
 -- BOOKINGS --
 
 INSERT INTO reviews
-    (score, content, locations_id, user_id)
+    (score, content, locations_id)
 VALUES
-    (5, 'Soooo much fun', 1, 1 ),
-    (5, 'Amazing experience! Beautiful and Peaceful', 2, 2),
-    (5, 'This place is a gem! Grateful to have found this trail', 3, 3);
+    (5, 'Soooo much fun', 1),
+    (5, 'Amazing experience! Beautiful and Peaceful', 2),
+    (5, 'This place is a gem! Grateful to have found this trail', 3);
 
 -- NEED TO ADD ITINERARY BUT YA GIRL IS SLEEPY --

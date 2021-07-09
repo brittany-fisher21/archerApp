@@ -22,21 +22,21 @@ CREATE TABLE activities (
     activity_terrain text
 );
 
-CREATE TABLE bookings {
+CREATE TABLE bookings (
     id serial PRIMARY KEY,
     booking_name text,
     booking_location text,
     booking_description text,
     booking_image varchar(500),
     booking_price integer,
-};
+);
 
 CREATE TABLE reviews (
     id serial PRIMARY KEY,
     score integer,
     content text,
-    locations_id integer REFERENCES locations(id),
-    users_id integer REFERENCES users(id)
+    locations_id integer REFERENCES locations(id)
+    -- users_id integer REFERENCES users(id)
 );
 
 CREATE TABLE itinerary (
