@@ -8,6 +8,8 @@ router.get('/signup', (req, res) => {
     res.render('template', {
         locals: {
             title: 'Account Registration',
+            heading: 'User',
+            subhead: 'na',
             is_logged_in: req.session.is_logged_in,
         },
         partials: {
@@ -61,7 +63,7 @@ router.post('/login', async (req, res) => {
     const response = await user.login();
 
     if (!!response.isValid) {
-        
+
         req.session.is_logged_in = response.isValid;
         req.session.user_id = response.user_id;
         req.session.first_name = response.first_name;
