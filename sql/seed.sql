@@ -29,3 +29,9 @@ VALUES
     (5, 'This place is a gem! Grateful to have found this trail', 3);
 
 -- NEED TO ADD ITINERARY BUT YA GIRL IS SLEEPY --
+INSERT INTO itinerary
+    (locations_id, activities_id, bookings_id, reviews_id)
+VALUES
+(),
+(),
+();
