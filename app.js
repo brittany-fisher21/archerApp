@@ -9,15 +9,15 @@ const express = require('express');
 const app = express();
 
 const helmet = require('helmet');
-app.use(helmet()); //middlewear for security
+app.use(helmet());
 
 const morgan = require('morgan');
-const logger = morgan('tiny');//middlewear for logging
+const logger = morgan('tiny');
 app.use(logger);
 
-app.use(express.json()); // adding form information
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'));// middlewear for using static assets, front end stuff like css and images
+app.use(express.static('public'));
 
 const es6Renderer = require('express-es6-template-engine');
 app.engine('html', es6Renderer);
