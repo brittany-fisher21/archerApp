@@ -22,14 +22,14 @@ CREATE TABLE activities (
     activity_terrain text
 );
 
-CREATE TABLE bookings {
+CREATE TABLE bookings (
     id serial PRIMARY KEY,
     booking_name text,
     booking_location text,
     booking_description text,
     booking_image varchar(500),
-    booking_price integer,
-};
+    booking_price integer
+);
 
 CREATE TABLE reviews (
     id serial PRIMARY KEY,
@@ -45,5 +45,5 @@ CREATE TABLE itinerary (
     locations_id integer REFERENCES locations(id),
     activities_id integer REFERENCES activities(id),
     bookings_id integer REFERENCES bookings(id),
-    reviews_id integer REFERENCES reviews(id),
+    reviews_id integer REFERENCES reviews(id)
 );
