@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         locals: {
             title: 'Register',
             heading: 'Register',
-            subhead: 'na',
+            subhead: 'Sign up to get your new journey started!',
         },
         partials: {
             body: 'partials/register',

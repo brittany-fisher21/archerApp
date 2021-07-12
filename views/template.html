@@ -14,17 +14,17 @@
 
 <div class="container-fluid">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- NAVIGATION BAR -->
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container-fluid">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-                </span>
-            </button>
+            <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="dark-blue-text"><i
+                        class="fas fa-bars fa-1x"></i></span></button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -39,27 +39,43 @@
 
                 </ul>
 
+                <span class="navbar-text">
+                    <a href="/login">Login</a> |
+                    <a href="/register">Sign-Up</a>
+                </span>
+
             </div>
         </div>
     </nav>
 
     <body>
 
-        <section id="home_top_sec_img">
-            <section id="home_header_container">
+        <!-- HEADER -->
+
+        <section class="home_top_sec_img">
+            <div class="home_header_container">
                 <h1 class="home_header_text">${heading}</h1>
                 <h2 class="home_header_text">${subhead}</h2>
-                <p class="home_header_text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem possimus.
-                </p>
-            </section>
+            </div>
+            <img class="fade-in" src="/images/white_logo.png">
         </section>
 
 </div>
 
+<br>
+
+<!-- BODY/BOTTOM CARDS -->
+
 ${body}
 
 </body>
+</div>
+
+<!-- FOOTER -->
+
+<div class="text-center p-4" style="background-color: #212529; color: white;">
+    May 2021 Cohort |
+    <a class="text-reset fw-bold" href="https://github.com/joshsimon-bit/archerApp">GitHub</a>
 </div>
 
 </html>

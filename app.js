@@ -8,6 +8,14 @@ const port = 3000;
 const express = require('express');
 const app = express();
 
+const session = require('express-session');
+app.use(session({
+    secret: 'adventureawaits',
+    resave: false,
+    saveUninitialized: false,
+    is_logged_in: false,
+}));
+
 const helmet = require('helmet');
 app.use(helmet());
 
@@ -34,7 +42,9 @@ const rootController = require('./routes/index');
 const registerController = require('./routes/register');
 const locationsController = require('./routes/locations');
 const bookingsController = require('./routes/bookings');
+const loginController = require('./routes/users')
 
+app.use('/login', loginController);
 app.use('/bookings', bookingsController);
 app.use('/register', registerController);
 app.use('/locations', locationsController)

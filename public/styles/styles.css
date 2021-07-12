@@ -1,55 +1,19 @@
-/* HOME TOP SECTION */
-body {
-  background-color: #f8f9fa;
-}
-
-#home_top_sec_img {
-  background: url(/images/archer_background.jpeg) no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-#home_header_container {
-  width: 50%;
-}
-
-h1 {
-  font-size: 8vw;
-  font-family: 'Montserrat';
-}
-
-h2 {
-  font-size: 2vw;
-  font-family: 'Montserrat';
-}
-
-p {
-  font-size: 1vw;
-  font-family: 'Montserrat';
-}
-
-.home_header_text {
-  color: white;
-  text-shadow: 0 6px 1px rgba(0,0,0,.1),
-  0 0 5px rgba(0,0,0,.1),
-  0 1px 3px rgba(0,0,0,.3),
-  0 3px 5px rgba(0,0,0,.2),
-  0 5px 10px rgba(0,0,0,.25),
-  0 10px 10px rgba(0,0,0,.2),
-  0 20px 20px rgba(0,0,0,.15);
-}
-
-a:link {
-  color: white;
-  text-decoration: none;
-}
-
-a:visited {
-  color: white;
-  text-decoration: none;
-}
-
 /* BOTTOM CARDS STYLING */
+
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navbar {
+  font-size: 0.9rem;
+}
+
+.wrapper{
+  margin: 0 auto;
+}
 
 .cols{
   display: -webkit-box;
@@ -62,8 +26,8 @@ a:visited {
           justify-content: center;
 }
 
-.col{
-  width: calc(25% - 2rem);
+.colx{
+  width: 33%;
   cursor: pointer;
 }
 
@@ -78,7 +42,6 @@ a:visited {
 .back{
   background-size: cover;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
-  border-radius: 1px;
 	background-position: center;
 	-webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 	transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -90,17 +53,9 @@ a:visited {
 	text-align: center;
 	min-height: 280px;
 	height: auto;
-	border-radius: 1px;
 	color: #fff;
 	font-size: 1.5rem;
 }
-
-/* .back{
-  background: #cedce7;
-  background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-} */
 
 .front:after{
 	position: absolute;
@@ -115,7 +70,7 @@ a:visited {
     background-color: #000;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-    border-radius: 1px;
+
 }
 .container:hover .front,
 .container:hover .back{
@@ -203,20 +158,108 @@ a:visited {
 }
 
 @media screen and (max-width: 64rem){
-  .col{
-    width: calc(33.333333% - 2rem);
-  }
-}
-
-@media screen and (max-width: 48rem){
-  .col{
-    width: calc(50% - 2rem);
-  }
-}
-
-@media screen and (max-width: 32rem){
-  .col{
+  .colx{
     width: 100%;
     margin: 0 0 2rem 0;
   }
+}
+
+/* LOGO STYLING */
+
+img {
+  padding: 30px;
+  width: 25%;
+  height: auto;
+  align-items: center;
+}
+
+.fade-in {
+  opacity: .75;
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.75;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.75;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.75;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.75;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.75;}
+}
+
+/* HOME TOP SECTION */
+
+body {
+  background-color: #212529;
+}
+
+.home_top_sec_img {
+  width: auto;
+  background: url(/images/archer_background.jpeg) no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home_header_container {
+  padding: 5%;
+}
+
+h1 {
+  font-size: 9vw;
+  font-family: 'Montserrat';
+}
+
+h2 {
+  font-size: 2vw;
+  font-family: 'Montserrat';
+}
+
+p {
+  font-family: 'Montserrat';
+}
+
+.home_header_text {
+  color: white;
+  text-shadow: 0 6px 1px rgba(0,0,0,.1),
+  0 0 5px rgba(0,0,0,.1),
+  0 1px 3px rgba(0,0,0,.3),
+  0 3px 5px rgba(0,0,0,.2),
+  0 5px 10px rgba(0,0,0,.25),
+  0 10px 10px rgba(0,0,0,.2),
+  0 20px 20px rgba(0,0,0,.15);
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+form {
+  background-color: white;
 }
