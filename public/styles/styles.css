@@ -51,13 +51,14 @@
 	-webkit-backface-visibility: hidden;
 	        backface-visibility: hidden;
 	text-align: center;
-	min-height: 280px;
-	height: auto;
+	min-height: auto;
+	height: 300px;
 	color: #fff;
 	font-size: 1.5rem;
 }
 
-.front:after{
+.front:after,
+.back:after {
 	position: absolute;
     top: 0;
     left: 0;
@@ -70,8 +71,8 @@
     background-color: #000;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-
 }
+
 .container:hover .front,
 .container:hover .back{
     -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -168,7 +169,7 @@
 
 img {
   padding: 30px;
-  width: 25%;
+  width: auto;
   height: auto;
   align-items: center;
 }
@@ -219,6 +220,7 @@ body {
   background-size: cover;
   display: flex;
   flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
 }
 
 .home_header_container {
@@ -226,12 +228,12 @@ body {
 }
 
 h1 {
-  font-size: 9vw;
+  font-size: 4rem;
   font-family: 'Montserrat';
 }
 
 h2 {
-  font-size: 2vw;
+  font-size: 2rem;
   font-family: 'Montserrat';
 }
 
@@ -262,4 +264,17 @@ a:visited {
 
 form {
   background-color: white;
+}
+
+#innercard {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
+
+#link:hover{
+  color: gray;
 }
