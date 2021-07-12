@@ -39,13 +39,11 @@ server.listen(port, hostname, () => {
 });
 
 const rootController = require('./routes/index');
-const registerController = require('./routes/register');
 const locationsController = require('./routes/locations');
 const bookingsController = require('./routes/bookings');
-const loginController = require('./routes/users')
+const userController = require('./routes/users')
 
-app.use('/login', loginController);
+app.use('/login', userController);
 app.use('/bookings', bookingsController);
-app.use('/register', registerController);
 app.use('/locations', locationsController)
 app.use('/', rootController);

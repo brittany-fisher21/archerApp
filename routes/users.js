@@ -1,12 +1,16 @@
+'use strict';
+
 const express = require('express'),
     router = express.Router(),
     bcrypt = require('bcryptjs'),
     UsersModel = require('../models/users');
 
-router.get('/', (req, res) => {
+// LOGIN
+
+router.get('/login', (req, res) => {
     res.render('template', {
         locals: {
-            title: 'User Log In',
+            title: 'User Login',
             heading: 'User Login',
             subhead: 'Sign in to get your new journey started!',
             is_logged_in: req.session.is_logged_in,
@@ -17,35 +21,39 @@ router.get('/', (req, res) => {
     });
 });
 
-
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = new UsersModel(null, null, null, email, password);
     const response = await user.login();
 
     if (!!response.isValid) {
+        const { isValid, user_id, name } = response;
 
-        req.session.is_logged_in = response.isValid;
-        req.session.user_id = response.user_id;
-        req.session.first_name = response.first_name;
-        req.session.last_name = response.last_name;
+        req.session.is_logged_in = isValid;
+        req.session.user_id = user_id;
+        req.session.name = name;
+
         res.redirect('/');
     } else {
         res.sendStatus(403);
     }
 });
 
+// LOGOUT
+
 router.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/');
 });
 
-router.get('/signup', (req, res) => {
+// REGISTER
+
+router.get('/register', (req, res) => {
     res.render('template', {
         locals: {
-            title: 'Account Registration',
-            heading: 'User',
-            subhead: 'na',
+            title: 'Registration',
+            heading: 'User Registration',
+            subhead: 'Sign up to get your new journey started!',
             is_logged_in: req.session.is_logged_in,
         },
         partials: {
@@ -60,16 +68,10 @@ router.post('/register', async (req, res) => {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
 
-    const response = await UsersModel.addUser(
-        name,
-        email,
-        user_name,
-        password,
-        hash
-    );
+    const response = await UsersModel.addUser(name, email, user_name, password, hash);
     console.log("Registration Response:", response);
     if (response.id) {
-        res.redirect('/users/login');
+        res.redirect('/');
     } else {
         res.send("ERROR: Please Try Submitting Again").status(500);
     }

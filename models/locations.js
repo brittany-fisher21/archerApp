@@ -11,8 +11,24 @@ class Location {
         this.location_activities = location_activities;
     }
 
-    // TBD
+    static async getAllLocations() {
+        try {
+            const response = await db.any(`SELECT * FROM locations;`);
+            return response;
+        } catch (err) {
+            return err.message;
+        }
+    }
 
+    async getLocationData() {
+        try {
+            const query = `SELECT location WHERE id = ${this.id}`;
+            const response = await db.one(query);
+            return response;
+        } catch (err) {
+            return err.message;
+        }
+    }
 }
 
 module.exports = Location;
