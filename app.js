@@ -43,7 +43,7 @@ const locationsController = require('./routes/locations');
 const bookingsController = require('./routes/bookings');
 const userController = require('./routes/users')
 
-app.use('/login', userController);
+app.use('/users', userController);
 app.use('/bookings', bookingsController);
 app.use('/locations', locationsController)
 app.use('/', rootController);
