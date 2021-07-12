@@ -3,23 +3,12 @@ const express = require('express'),
     bcrypt = require('bcryptjs'),
     UsersModel = require('../models/users');
 
-
-router.get('/signup', (req, res) => {
-    res.render('template', {
-        locals: {
-            title: 'Account Registration',
-            is_logged_in: req.session.is_logged_in,
-        },
-        partials: {
-            body: 'partials/register',
-        },
-    });
-});
-
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     res.render('template', {
         locals: {
             title: 'User Log In',
+            heading: 'User Login',
+            subhead: 'Sign in to get your new journey started!',
             is_logged_in: req.session.is_logged_in,
         },
         partials: {
@@ -28,11 +17,42 @@ router.get('/login', (req, res) => {
     });
 });
 
+
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    const user = new UsersModel(null, null, null, email, password);
+    const response = await user.login();
+
+    if (!!response.isValid) {
+
+        req.session.is_logged_in = response.isValid;
+        req.session.user_id = response.user_id;
+        req.session.first_name = response.first_name;
+        req.session.last_name = response.last_name;
+        res.redirect('/');
+    } else {
+        res.sendStatus(403);
+    }
+});
+
 router.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/');
-})
+});
 
+router.get('/signup', (req, res) => {
+    res.render('template', {
+        locals: {
+            title: 'Account Registration',
+            heading: 'User',
+            subhead: 'na',
+            is_logged_in: req.session.is_logged_in,
+        },
+        partials: {
+            body: 'partials/register',
+        },
+    });
+});
 
 router.post('/register', async (req, res) => {
     const { name, email, user_name, password } = req.body;
@@ -52,23 +72,6 @@ router.post('/register', async (req, res) => {
         res.redirect('/users/login');
     } else {
         res.send("ERROR: Please Try Submitting Again").status(500);
-    }
-});
-
-router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    const user = new UsersModel(null, null, null, email, password);
-    const response = await user.login();
-
-    if (!!response.isValid) {
-        
-        req.session.is_logged_in = response.isValid;
-        req.session.user_id = response.user_id;
-        req.session.first_name = response.first_name;
-        req.session.last_name = response.last_name;
-        res.redirect('/');
-    } else {
-        res.sendStatus(403);
     }
 });
 
