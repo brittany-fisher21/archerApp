@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     res.render('template', {
         locals: {
             title: 'Itinerary',
-            heading: 'Itinarary',
+            heading: 'Itinerary',
             subhead: 'Take a look at what is coming up.',
             is_logged_in: req.session.is_logged_in,
         },
