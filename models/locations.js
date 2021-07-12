@@ -29,6 +29,20 @@ class Location {
             return err.message;
         }
     }
+
+    async addLocation() {
+        try {
+            const query = (`INSERT INTO itinerary
+            (users_id, locations_id)
+            VALUES
+            (${this.users_id}, ${this.locations_id}) RETURNING id;`);
+            const response = await db.one(query);
+            return response;
+        } catch (error) {
+            console.error('ERROR: ', error);
+            return error;
+        }
+    }
 }
 
 module.exports = Location;

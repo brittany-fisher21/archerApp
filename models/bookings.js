@@ -29,6 +29,20 @@ class Booking {
             return err.message;
         }
     }
+
+    async addBooking() {
+        try {
+            const query = (`INSERT INTO itinerary
+            (users_id, bookings_id)
+            VALUES
+            (${this.users_id}, ${this.bookings_id}) RETURNING id;`);
+            const response = await db.one(query);
+            return response;
+        } catch (error) {
+            console.error('ERROR: ', error);
+            return error;
+        }
+    }
 }
 
 module.exports = Booking;
