@@ -7,7 +7,7 @@ VALUES
 
     ('Brittany', 'brittany@fakeemail.com', 'brittany_fake', 'passB'),
 
-    ('Joshua', 'joshua@fakeemail.com', 'joshua_fake', 'passC')
+    ('Joshua', 'joshua@fakeemail.com', 'joshua_fake', 'passC');
 
 INSERT INTO locations
 
@@ -35,7 +35,7 @@ VALUES
 
 INSERT INTO bookings
 
-    (booking_name, booking_location booking_description, booking_image, booking_price)
+    (booking_name, booking_location, booking_description, booking_image, booking_price)
 
 VALUES
 
@@ -63,6 +63,6 @@ INSERT INTO itinerary
 
 VALUES
 
-(),
-(),
-();
+(3, 1, 1, 3),
+(2, 2, 2, 2),
+(1, 3, 3, 1);
