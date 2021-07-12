@@ -5,6 +5,9 @@ const express = require('express'),
     itineraryModel = require('../models/itinerary');
 
 router.get('/', async (req, res) => {
+    const users_id = req.session.users_id;
+    const itineraryPlan = await itineraryModel.makeItinerary(users_id);
+
     res.render('template', {
         locals: {
             title: 'Itinerary',

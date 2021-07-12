@@ -5,6 +5,9 @@ const express = require('express'),
     bookingsModel = require('../models/bookings');
 
 router.get('/', async (req, res) => {
+    const { id } = req.params;
+    const bookings = await bookingsModel.getAllBookings(id);
+
     res.render('template', {
         locals: {
             title: 'Bookings',
@@ -16,6 +19,13 @@ router.get('/', async (req, res) => {
             body: 'partials/bookings',
         },
     })
+});
+
+router.post('/add', async (req, res) => {
+    const { itinerary_id } = req.session;
+    const { bookings_id } = req.body;
+    const response = await bookingsModel.addBooking(itinerary_id, bookings_id);
+    res.redirect('/');
 })
 
 module.exports = router;

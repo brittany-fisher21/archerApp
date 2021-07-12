@@ -5,6 +5,9 @@ const express = require('express'),
     locationModel = require('../models/locations');
 
 router.get('/', async (req, res) => {
+    const { id } = req.params;
+    const locations = await locationModel.getAllLocations(id);
+
     res.render('template', {
         locals: {
             title: 'Locations',
@@ -17,5 +20,12 @@ router.get('/', async (req, res) => {
         },
     })
 });
+
+router.post('/add', async (res, req) => {
+    const { itinerary_id } = req.session;
+    const { locations_id } = req.body;
+    const response = await locationModel.addLocation(itinerary_id, locations_id);
+    res.redirect('/');
+})
 
 module.exports = router;
