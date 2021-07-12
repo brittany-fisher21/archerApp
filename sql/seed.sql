@@ -3,10 +3,10 @@ INSERT INTO users
 VALUES
     ('Alyna', 'alyna@fakeemail.com', 'Alyna_fake', 'abc'),
     ('Brittany', 'brittany@fakeemail.com', 'Brittany_fake', 'xyz'),
-    ('Joshua', 'joshua@fakeemail.com', 'Joshua_fake', '123')
+    ('Joshua', 'joshua@fakeemail.com', 'Joshua_fake', '123');
 
 INSERT INTO locations
-    (state_name, location_name, location_description, location_image location_activities)
+    (state_name, locations_name, locations_description, locations_images, locations_activities)
 VALUES
     ('Texas', 'Lake Allatoona', 'Peaceful and calm waters', '/images/kayaking_lake_allatoona.jpg', 'Kayaking'),
     ('Texas', 'Good Water Loop',  'Features a lake and 26.9 trail', '/images/???', 'Backpacking and Hiking'),
