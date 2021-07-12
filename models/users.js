@@ -16,9 +16,9 @@ class User {
         return bcrypt.compareSync(this.password, hasedPassword)
     }
 
-    static async addUser(name, email, user_name, password) {
+    static async addUser(email, password) {
         try {
-            const query = `INSERT INTO users (name, email, user_name, password) VALUES ('${name}', '${email}', '${user_name}', '${password}') RETURNING id`;
+            const query = `INSERT INTO users (name, email, user_name, password) VALUES ('undefined', '${email}', 'undefined', '${password}') RETURNING id`;
             const response = await db.one(query);
             return response;
         } catch (error) {
@@ -29,7 +29,7 @@ class User {
 
     async login() {
         try {
-            const query = `SELECT * FROM users WHERE user_name = '${this.user_name}';`;
+            const query = `SELECT * FROM users WHERE email = '${this.email}';`;
             const response = await db.one(query);
             console.log("LOGIN RESPONSE: ", response);
             const isValid = this.checkPassword(response.password);

@@ -3,7 +3,7 @@ CREATE TABLE users (
     name VARCHAR (20) NOT NULL,
     email VARCHAR (40) NOT NULL,
     user_name VARCHAR (40) NOT NULL,
-    password VARCHAR (10) NOT NULL
+    password VARCHAR (2000) NOT NULL
 );
 
 CREATE TABLE locations (

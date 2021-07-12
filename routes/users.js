@@ -23,7 +23,7 @@ router.get('/login', (req, res) => {
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    const user = new UsersModel(null, null, null, email, password);
+    const user = new UsersModel(null, null, email, null, password);
     const response = await user.login();
 
     if (!!response.isValid) {
@@ -63,12 +63,12 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { name, email, user_name, password } = req.body;
+    const {email, password } = req.body;
 
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
 
-    const response = await UsersModel.addUser(name, email, user_name, password, hash);
+    const response = await UsersModel.addUser(email, hash);
     console.log("Registration Response:", response);
     if (response.id) {
         res.redirect('/');
