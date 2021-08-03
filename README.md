@@ -16,7 +16,7 @@ The organization of this project was tracked via Zoom, Slack and Trello.
 
 During the construction of this app, the group learned to work jointly and independently.
 
-The group utilized Trello to define task, github for code organization/merging and Zoom for screen sharing.
+The group utilized Trello to define tasks, github for code organization/merging and Zoom for screen sharing.
 
 Archer, as pictured above, relies on Boostrap for it's front-end styling.
 
